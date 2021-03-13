@@ -1,4 +1,4 @@
-package mom.sda.entities;
+package mom.sda.projectmanagement.entities;
 
 import javax.persistence.*;
 
