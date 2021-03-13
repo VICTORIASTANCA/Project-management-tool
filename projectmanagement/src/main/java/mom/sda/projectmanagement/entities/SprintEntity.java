@@ -1,7 +1,10 @@
 package mom.sda.projectmanagement.entities;
 
+import org.apache.catalina.LifecycleState;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "sprint")
@@ -10,8 +13,9 @@ public class SprintEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Date dateFrom;
-    private Date dateDo;
-    private String plannedStoryPoints;
+    private Date dateTo;
+    private Integer plannedStoryPoints;
+
 
     public Date getDateFrom() {
         return dateFrom;
@@ -21,19 +25,19 @@ public class SprintEntity {
         this.dateFrom = dateFrom;
     }
 
-    public Date getDateDo() {
-        return dateDo;
+    public Date getDateTo() {
+        return dateTo;
     }
 
-    public void setDateDo(Date dateDo) {
-        this.dateDo = dateDo;
+    public void setDateTo(Date dateDo) {
+        this.dateTo = dateDo;
     }
 
-    public String getPlannedStoryPoints() {
+    public Integer getPlannedStoryPoints() {
         return plannedStoryPoints;
     }
 
-    public void setPlannedStoryPoints(String plannedStoryPoints) {
+    public void setPlannedStoryPoints(Integer plannedStoryPoints) {
         this.plannedStoryPoints = plannedStoryPoints;
     }
 }
