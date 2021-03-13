@@ -1,8 +1,7 @@
 package mom.sda.projectmanagement.entities;
 
-import org.apache.catalina.LifecycleState;
-
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +16,26 @@ public class SprintEntity {
     private Integer plannedStoryPoints;
 
 
+    @OneToMany
+    private List<
+            TaskNameEntity> tasks = new ArrayList<>();
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public List<TaskNameEntity> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<TaskNameEntity> tasks) {
+        this.tasks = tasks;
+    }
+
     public Date getDateFrom() {
         return dateFrom;
     }
@@ -29,8 +48,8 @@ public class SprintEntity {
         return dateTo;
     }
 
-    public void setDateTo(Date dateDo) {
-        this.dateTo = dateDo;
+    public void setDateTo(Date dateTo) {
+        this.dateTo = dateTo;
     }
 
     public Integer getPlannedStoryPoints() {
