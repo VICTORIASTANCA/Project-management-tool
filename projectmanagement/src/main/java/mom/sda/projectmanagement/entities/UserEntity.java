@@ -16,7 +16,7 @@ public class UserEntity {
     private String email;
     private String displayed_name;
 
-    @OneToMany(mappedBy = "task")
+    @OneToMany(mappedBy = "user")
     private List<TaskNameEntity>tasks;
 
     public Integer getId() {
