@@ -1,6 +1,5 @@
-package mom.sda.projectmanagement.service;
+package mom.sda.projectmanagement.services;
 
-import mom.sda.projectmanagement.entities.ProjectEntity;
 import mom.sda.projectmanagement.entities.SprintEntity;
 import mom.sda.projectmanagement.repositories.SprintRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,7 @@
-package mom.sda.projectmanagement.controller;
+package mom.sda.projectmanagement.controllers;
 
-
-import mom.sda.projectmanagement.entities.ProjectEntity;
 import mom.sda.projectmanagement.entities.SprintEntity;
-import mom.sda.projectmanagement.service.ProjectService;
-import mom.sda.projectmanagement.service.SprintService;
+import mom.sda.projectmanagement.services.SprintService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
