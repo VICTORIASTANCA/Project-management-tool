@@ -1,5 +1,5 @@
 
-package mom.sda.projectmanagement.controllers;
+package mom.sda.projectmanagement.controller;
 
 
 import mom.sda.projectmanagement.entities.ProjectEntity;

@@ -1,5 +1,9 @@
 package mom.sda.projectmanagement.entities;
 
+import org.apache.tomcat.jni.User;
+import org.hibernate.usertype.UserType;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,15 +21,22 @@ public class TaskNameEntity {
     private int storyPoints;
     @Enumerated(EnumType.STRING)
     private State progress;
-    private String assignedPerson;
+    private UserEntity assignedPerson;
 
     public enum State {
         TO_DO, ONGOING, BACKLOG, DONE, POSTPONED
     }
 
     @ManyToOne
-    @JoinColumn(name = "id")
     private UserEntity user;
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
 
     public UserEntity userEntity() {
         return user;
@@ -87,11 +98,11 @@ public class TaskNameEntity {
         this.progress = progress;
     }
 
-    public String getAssignedPerson() {
+    public UserEntity getAssignedPerson() {
         return assignedPerson;
     }
 
-    public void setAssignedPerson(String assignedPerson) {
+    public void setAssignedPerson(UserEntity assignedPerson) {
         this.assignedPerson = assignedPerson;
     }
 }

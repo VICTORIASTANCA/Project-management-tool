@@ -5,15 +5,14 @@
         xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My projects</title>
+    <title>My sprint</title>
 </head>
 <body>
 
-<p>Here are my projects</p>
+<p>Here are my sprint</p>
 
-<li th:each="project: ${project}">
-    <p th:text="${project.name}"/>
-    <p th:yrxt="${project.description}"/>
+<li th:each="sprint: ${sprint}">
+    <p th:text="${sprint.name}"/>
 </li>
 
 </body>

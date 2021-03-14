@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import java.util.List;
 
 @Controller
@@ -20,6 +23,17 @@ public class ProjectController {
         List<ProjectEntity> projectList = projectService.gettAllProject();
         model.addAttribute("project", projectList);
         return "project";
+    }
+    @GetMapping(path = "add-project")
+    public String addProjectPage(Model model) {
+        model.addAttribute("newProject", new ProjectEntity());
+        return "add-project";
+    }
+
+    @PostMapping(path = "project/add")
+    public String addProject(@ModelAttribute ProjectEntity newProject){
+        projectService.addProject(newProject);
+        return "redirect:/getProject";
     }
 
 
