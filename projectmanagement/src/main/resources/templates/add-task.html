@@ -5,18 +5,20 @@
     <title>Add Task</title>
 </head>
 <body>
+
+<p>Add new task</p>
 <form action="#" th:action="@{/task/add}" th:object="${newTask}" method="post">
-    <table border="1">
+    <table border="3">
         <tr>
             <td><label>Name</label></td>
             <td><input type= text" th:field="*{name}" /></td>
         </tr>
         <tr>
-            <td><label th:text="#{msg.name}"/></td>
+            <td><label>Description:</label></td>
             <td><input type= text" th:field="*{description}" /></td>
         </tr>
         <tr>
-            <td><input type= submit" value="Submit" /></td>
+            <td><input type= "submit" value="Submit" /></td>
         </tr>
 </form>
 </body>
