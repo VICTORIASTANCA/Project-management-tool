@@ -1,13 +1,11 @@
-package mom.sda.projectmanagement.controller;
-
+package mom.sda.projectmanagement.controllers;
 
 import mom.sda.projectmanagement.entities.ProjectEntity;
-import mom.sda.projectmanagement.service.ProjectService;
+import mom.sda.projectmanagement.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

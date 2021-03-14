@@ -2,14 +2,18 @@
 package mom.sda.projectmanagement.controllers;
 
 
-import mom.sda.projectmanagement.entities.UserEntity;
+import mom.sda.projectmanagement.entities.ProjectEntity;
+import mom.sda.projectmanagement.entities.SprintEntity;
+import mom.sda.projectmanagement.entities.TaskNameEntity;
 import mom.sda.projectmanagement.repositories.UserRepository;
-import mom.sda.projectmanagement.service.UserService;
+import mom.sda.projectmanagement.services.ProjectService;
+import mom.sda.projectmanagement.services.SprintService;
+import mom.sda.projectmanagement.services.TaskService;
+import mom.sda.projectmanagement.services.UserService;
 import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 

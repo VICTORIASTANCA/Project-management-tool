@@ -1,4 +1,4 @@
-package mom.sda.projectmanagement.service;
+package mom.sda.projectmanagement.services;
 
 
 import mom.sda.projectmanagement.entities.UserEntity;
