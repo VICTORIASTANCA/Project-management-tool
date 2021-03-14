@@ -1,6 +1,7 @@
 package mom.sda.projectmanagement.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="user")
@@ -14,6 +15,9 @@ public class UserEntity {
     private String password;
     private String email;
     private String displayed_name;
+
+    @OneToMany(mappedBy = "task")
+    private List<TaskNameEntity>tasks;
 
     public Integer getId() {
         return id;
