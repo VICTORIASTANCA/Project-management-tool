@@ -18,26 +18,40 @@ public class SprintEntity {
 
 
     public Date getDateFrom() {
+
         return dateFrom;
     }
 
     public void setDateFrom(Date dateFrom) {
+
         this.dateFrom = dateFrom;
     }
 
     public Date getDateTo() {
+
         return dateTo;
     }
 
-    public void setDateTo(Date dateDo) {
+    public void setDateTo(Date dateDo)
+    {
         this.dateTo = dateDo;
     }
 
     public Integer getPlannedStoryPoints() {
+
         return plannedStoryPoints;
     }
 
     public void setPlannedStoryPoints(Integer plannedStoryPoints) {
+
         this.plannedStoryPoints = plannedStoryPoints;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

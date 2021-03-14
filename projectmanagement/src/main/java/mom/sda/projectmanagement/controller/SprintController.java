@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -23,4 +25,18 @@ public class SprintController {
         model.addAttribute("sprint", sprintList);
         return "sprint";
     }
+
+    @GetMapping(path = "add-sprint")
+    public String addSprintPage(Model model) {
+        model.addAttribute("newSprint", new SprintEntity());
+        return "add-sprint";
+    }
+
+    @PostMapping(path = "sprint/add")
+    public String addSprint(@ModelAttribute SprintEntity newSprint){
+        sprintService.addSprint(newSprint);
+        return "redirect:/getSprint";
+    }
+
+
 }
