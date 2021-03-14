@@ -2,14 +2,18 @@
 package mom.sda.projectmanagement.controllers;
 
 
-import mom.sda.projectmanagement.entities.UserEntity;
+import mom.sda.projectmanagement.entities.ProjectEntity;
+import mom.sda.projectmanagement.entities.SprintEntity;
+import mom.sda.projectmanagement.entities.TaskNameEntity;
 import mom.sda.projectmanagement.repositories.UserRepository;
-import mom.sda.projectmanagement.service.UserService;
+import mom.sda.projectmanagement.services.ProjectService;
+import mom.sda.projectmanagement.services.SprintService;
+import mom.sda.projectmanagement.services.TaskService;
+import mom.sda.projectmanagement.services.UserService;
 import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -85,6 +89,61 @@ public class UserController {
 
     }
 
+    @RestController
+    public static class TaskController {
+
+        @Autowired
+        private TaskService taskService;
+
+        @GetMapping("getTasks")
+        public String getTasks(Model model) {
+            List<TaskNameEntity> taskList = taskService.getAllTasks();
+            model.addAttribute("tasks", taskList);
+            return "tasks";
+        }
+
+        @GetMapping("add-task")
+        public String addTaskPage(Model model) {
+            model.addAttribute("newTask", new TaskNameEntity());
+            return "add-task";
+        }
+
+        @PostMapping("task/add")
+        public String addTask(@ModelAttribute TaskNameEntity newTask) {
+            taskService.addTask(newTask);
+            return "redirect:/getTasks";
+        }
+
+    }
+
+    @Controller
+    public static class SprintController {
+        @Autowired
+        private SprintService sprintService;
+
+        @GetMapping(path = "getSprint")
+        public String getSprint(Model model) {
+            List<SprintEntity> sprintList = sprintService.getAllSprint();
+            model.addAttribute("sprint", sprintList);
+            return "sprint";
+        }
+    }
+
+    @Controller
+    public static class ProjectController {
+
+        @Autowired
+        private ProjectService projectService;
+
+        @GetMapping(path = "getProject")
+        public String getProject(Model model) {
+            List<ProjectEntity> projectList = projectService.gettAllProject();
+            model.addAttribute("project", projectList);
+            return "project";
+        }
+
+
+    }
 }
 
 

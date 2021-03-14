@@ -1,8 +1,7 @@
-package mom.sda.projectmanagement.service;
+package mom.sda.projectmanagement.services;
 
 import mom.sda.projectmanagement.entities.TaskNameEntity;
 import mom.sda.projectmanagement.repositories.TaskRepository;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
