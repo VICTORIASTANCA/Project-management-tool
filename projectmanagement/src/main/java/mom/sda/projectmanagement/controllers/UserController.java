@@ -89,61 +89,6 @@ public class UserController {
 
     }
 
-    @Controller
-    public static class TaskController {
-
-        @Autowired
-        private TaskService taskService;
-
-        @GetMapping("getTasks")
-        public String getTasks(Model model) {
-            List<TaskNameEntity> taskList = taskService.getAllTasks();
-            model.addAttribute("tasks", taskList);
-            return "tasks";
-        }
-
-        @GetMapping("add-task")
-        public String addTaskPage(Model model) {
-            model.addAttribute("newTask", new TaskNameEntity());
-            return "add-task";
-        }
-
-        @PostMapping("task/add")
-        public String addTask(@ModelAttribute TaskNameEntity newTask) {
-            taskService.addTask(newTask);
-            return "redirect:/getTasks";
-        }
-
-    }
-
-    @Controller
-    public static class SprintController {
-        @Autowired
-        private SprintService sprintService;
-
-        @GetMapping(path = "getSprint")
-        public String getSprint(Model model) {
-            List<SprintEntity> sprintList = sprintService.getAllSprint();
-            model.addAttribute("sprint", sprintList);
-            return "sprint";
-        }
-    }
-
-    @Controller
-    public static class ProjectController {
-
-        @Autowired
-        private ProjectService projectService;
-
-        @GetMapping(path = "getProject")
-        public String getProject(Model model) {
-            List<ProjectEntity> projectList = projectService.gettAllProject();
-            model.addAttribute("project", projectList);
-            return "project";
-        }
-
-
-    }
 }
 
 
