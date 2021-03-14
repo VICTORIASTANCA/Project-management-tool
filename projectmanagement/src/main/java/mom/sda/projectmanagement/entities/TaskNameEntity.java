@@ -1,5 +1,9 @@
 package mom.sda.projectmanagement.entities;
 
+import org.apache.tomcat.jni.User;
+import org.hibernate.usertype.UserType;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
+
 import javax.persistence.*;
 
 @Entity
