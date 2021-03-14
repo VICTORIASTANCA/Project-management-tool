@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My projects</title>
+</head>
+<body>
+
+<p>Here are my projects</p>
+
+<li th:each="book: ${books}">
+    <p th:text="${project.name}"/>
+</li>
+
+</body>
