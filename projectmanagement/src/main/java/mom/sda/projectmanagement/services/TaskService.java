@@ -33,4 +33,9 @@ public class TaskService {
     public void setTaskRepository(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
+
+    public TaskRepository getTaskRepository() {
+        return taskRepository;
+    }
+
 }
