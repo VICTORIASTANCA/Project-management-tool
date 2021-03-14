@@ -1,4 +1,4 @@
-package mom.sda.projectmanagement.services;
+package mom.sda.projectmanagement.service;
 
 import mom.sda.projectmanagement.entities.TaskNameEntity;
 import mom.sda.projectmanagement.repositories.TaskRepository;

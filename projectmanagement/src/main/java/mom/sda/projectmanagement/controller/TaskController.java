@@ -1,12 +1,10 @@
-package mom.sda.projectmanagement.controllers;
+package mom.sda.projectmanagement.controller;
 
 import mom.sda.projectmanagement.entities.TaskNameEntity;
-import mom.sda.projectmanagement.services.TaskService;
+import mom.sda.projectmanagement.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
