@@ -15,7 +15,7 @@ public class TaskNameEntity {
     private int sprint;
     private double weight;
     private int storyPoints;
-    @Enumerated (EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private State progress;
     private String assignedPerson;
 
