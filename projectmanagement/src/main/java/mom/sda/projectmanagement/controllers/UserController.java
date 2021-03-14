@@ -89,7 +89,7 @@ public class UserController {
 
     }
 
-    @RestController
+    @Controller
     public static class TaskController {
 
         @Autowired
