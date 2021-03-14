@@ -19,9 +19,16 @@ public class TaskNameEntity {
     private State progress;
     private String assignedPerson;
 
-
     public enum State {
         TO_DO, ONGOING, BACKLOG, DONE, POSTPONED
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private UserEntity user;
+
+    public UserEntity userEntity() {
+        return user;
     }
 
     public Integer getId() {
