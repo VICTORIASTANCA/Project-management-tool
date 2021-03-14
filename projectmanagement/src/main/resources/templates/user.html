@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All users</title>
 </head>
 <body>
 
+<p>Please see below all the users assigned for the projects</p>
+
+<li th:each="user: ${user}">
+    <p th:text=user.displayed_name}"/>
+</li>
+
 </body>
-</html>
