@@ -24,9 +24,15 @@ public class SprintService {
        sprintRepository.save(editSprint);
     }
 
-    
+    public void deleteSprint(Integer id) {
+        sprintRepository.deleteById(id);
+    }
 
+    public SprintRepository getSprintRepository() {
+        return sprintRepository;
+    }
 
-
-
+    public void setSprintRepository(SprintRepository sprintRepository) {
+        this.sprintRepository = sprintRepository;
+    }
 }
