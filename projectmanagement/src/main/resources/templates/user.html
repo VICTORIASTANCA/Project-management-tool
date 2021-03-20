@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html
-        xmlns:th="http://www.thymeleaf.org"
+
+<html  xmlns:th="http://www.thymeleaf.org" >
+
+
 
 <head>
     <meta charset="UTF-8">
-    <title>All users</title>
+    <title>WELCOME to our sistem management tool</title>
 </head>
 <body>
-
+<p  th:text="#{home.welcome)">WELCOME to our sistem management tool!</p>
 <p>Please see below all the users assigned for the projects</p>
 
-<li th:each="user: ${user}">
-    <p th:text="user: ${login}"/>
-    <p th:text="user: ${password}"/>
-    <p th:text="user:${email}"/>
-    <p th:text="user:${displayed_name}"/>
+<li th:each="user:${user}">
+    <p th:text="${user.login}">
+    <p th:text="user:${password}">
+    <p th:text="user:${email}" >
+    <p th:text="user:${displayed_name}">
 
 </li>
 
 </body>
+</html>

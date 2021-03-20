@@ -1,6 +1,5 @@
 
 package mom.sda.projectmanagement.controllers;
-
 import mom.sda.projectmanagement.repositories.UserRepository;
 import mom.sda.projectmanagement.services.UserService;
 import org.apache.tomcat.jni.User;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
@@ -17,21 +15,21 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private  UserService userService;
     @Autowired
     private UserRepository userRepository;
 
-    public UserController() {
+
+    public UserController()  {
 
     }
-
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
 
-    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
     public ModelAndView hello(HttpServletResponse response) throws IOException {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("home");
@@ -49,7 +47,6 @@ public class UserController {
         mv.setViewName("allUsers");
         return mv;
     }
-
     // add user
     @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public ModelAndView displayNewUserForm() {
@@ -69,6 +66,7 @@ public class UserController {
         mv.addObject("user", user);
         return mv;
     }
+
 
 
     //delete user

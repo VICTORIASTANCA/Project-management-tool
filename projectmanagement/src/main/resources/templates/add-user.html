@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Task</title>
+    <title>List of users for all the projects in location</title>
 </head>
 <body>
+<p>WELCOME to our project management tool!</p>
+<p>ADD USER</p>
 
-<p>Add new user</p>
+
+<!--/*@thymesVar id="newUser" type=""*/-->
 <form action="#" th:action="@{/user/add}" th:object="${newUser}" method="post">
     <table border="3">
         <tr>
-            <td><label>displayed_name</label></td>
-            <td><input type= "text" th:field="*{displayed_name}" /></td>
+            <td><label> login</label></td>
+
+            <td><input type="text" th:field="*{login}"/></td>
+
+            <td><label> email</label></td>
+
+            <td><input type="text" th:field="*{email}"/></td>
+
+            <td><label> displayed_name</label></td>
+
+            <td><input type="text" th:field="*{displayed_name}"/></td>
         </tr>
         <tr>
-            <td><label>:</label></td>
-            <td><input type= text" th:field="*{description}" /></td>
+            <td><label>password:</label></td>
+
+            <td><input type="password" th:field="*{password}"/></td>
+
+            <td><input type="submit" value="Submit"/></td>
         </tr>
-        <tr>
-            <td><input type= "submit" value="Submit" /></td>
-        </tr>
+    </table>
 </form>
 </body>
+</html>
