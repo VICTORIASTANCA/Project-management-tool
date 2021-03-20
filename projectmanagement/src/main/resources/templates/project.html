@@ -12,8 +12,9 @@
 <p>Here are my projects</p>
 
 <li th:each="project: ${project}">
-    <p th:text="${project.name}"/>
-    <p th:yrxt="${project.description}"/>
+    <p th:text="'Id:' + ${project.id}"/>
+    <p th:text="'Name:' + ${project.name}"/>
+    <p th:text="'Description:' + ${project.description}"/>
 </li>
 
 </body>
