@@ -36,6 +36,24 @@ public class ProjectController {
         projectService.addProject(newProject);
         return "redirect:/getProject";
     }
+    @GetMapping(path = "edit-project/{id}")
+    public String editProject(Model model, @PathVariable("id") int id){
+       ProjectEntity projectEntity = projectService.getProject(id);
+        model.addAttribute("projectToBeEdit", projectEntity);
+        return "edit-project";
+    }
+
+    @PostMapping(path = "project/edit")
+    public String editProject(@ModelAttribute ProjectEntity projectToBeEdit){
+        projectService.editProject(projectToBeEdit);
+        return "redirect:/getProject";
+    }
+
+    @GetMapping(path = "delete-project/{id}")
+    public String delete(Model model, @PathVariable("id") int id){
+        projectService.deleteProject(id);
+        return "redirect:/getProject";
+    }
 
 
 }

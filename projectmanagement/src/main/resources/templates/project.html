@@ -8,12 +8,16 @@
     <title>My projects</title>
 </head>
 <body>
+<a th:href="@{/add-project}"><button>Add project</button></a>
 
 <p>Here are my projects</p>
 
 <li th:each="project: ${project}">
-    <p th:text="${project.name}"/>
-    <p th:yrxt="${project.description}"/>
+    <p th:text="'Id:' + ${project.id}"/>
+    <p th:text="'Name:' + ${project.name}"/>
+    <p th:text="'Description:' + ${project.description}"/>
+    <a th:href="@{/edit-project/{id}(id = ${project.id})}"><button>Edit</button></a>
+    <a th:href="@{/delete-project/{id}(id = ${project.id})}"><button>Delete</button></a>
 </li>
 
 </body>
