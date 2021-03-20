@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -21,9 +22,7 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
-    public void editTask(TaskNameEntity editedTask) {
-        taskRepository.save(editedTask);
-    }
+    public void editTask(TaskNameEntity editedTask) { taskRepository.save(editedTask); }
 
     public void deleteTask(Integer id) {
         taskRepository.deleteById(id);
@@ -37,4 +36,9 @@ public class TaskService {
         return taskRepository;
     }
 
+    public TaskNameEntity getTask(Integer id) {
+        Optional<TaskNameEntity> taskNameEntityOptional =  taskRepository.findById(id);
+       TaskNameEntity taskNameEntity = taskNameEntityOptional.get();
+        return taskNameEntity;
+    }
 }
