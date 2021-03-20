@@ -12,19 +12,36 @@
         <tr>
             <td><label> Id</label>
             </td>
-            <td ><input readonly type="text" th:field="*{id}" /></td>
+            <td><input readonly type="text" th:field="*{id}"/></td>
         </tr>
         <tr>
             <td><label>Name</label></td>
-            <td><input type= "text" th:field="*{name}" /></td>
+            <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td><label>Description:</label></td>
-            <td><input type= "text" th:field="*{description}" /></td>
+            <td><input type="text" th:field="*{description}"/></td>
         </tr>
         <tr>
-            <td><input type= "submit" value="Edit" /></td>
+            <td><label>Description:</label></td>
+            <td><input type="text" th:field="*{sprint}"/></td>
         </tr>
+        <tr>
+            <td><label>Description:</label></td>
+            <td><input type="text" th:field="*{weight}"/></td>
+        </tr>
+        <tr>
+            <td><label>Description:</label></td>
+            <td><input type="text" th:field="*{storyPoints}"/></td>
+        </tr>
+        <tr>
+            <td><label>Description:</label></td>
+            <td><input type="text" th:field="*{progress}"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Edit"/></td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>

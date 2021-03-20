@@ -15,6 +15,11 @@
     <p th:text="${task.id}"/>
     <p th:text="${task.name}"/>
     <p th:text="${task.description}"/>
+    <p th:text="${task.sprint}"/>
+    <p th:text="${task.weight}"/>
+    <p th:text="${task.storyPoints}"/>
+    <p th:text="${task.progress}"/>
+    <p th:text="${task.user}"/>
     <a th:href="@{/delete-task/{id}(id = ${task.id})}"><button>Delete</button></a>
     <a th:href="@{/edit-task/{id}(id = ${task.id})}"><button>Edit</button></a>
 </li>
