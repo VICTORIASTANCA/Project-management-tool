@@ -4,33 +4,25 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class UserEntity {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-
-    private Integer id;
-
+    @GeneratedValue( strategy = GenerationType.AUTO)
+    private Long id;
     private String login;
     private String password;
     private String email;
     private String displayed_name;
 
     @OneToMany(mappedBy = "user")
-    private List<TaskNameEntity>tasks;
+    private List<TaskNameEntity> tasks;
 
-    public UserEntity(List<TaskNameEntity> tasks) {
-        for (TaskNameEntity taskNameEntity : this.tasks = tasks) {
-
-        }
-
-    }
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,13 +54,6 @@ public class UserEntity {
         return displayed_name;
     }
 
-
-
-    public void setDisplayed_name(String displayed_name) {
-        this.displayed_name = displayed_name;
-
-    }
-
     @Override
     public String toString() {
         return "UserEntity{" +
@@ -78,5 +63,10 @@ public class UserEntity {
                 ", email='" + email + '\'' +
                 ", displayed_name='" + displayed_name + '\'' +
                 '}';
+    }
+
+    public void setDisplayed_name(String displayed_name) {
+        this.displayed_name = displayed_name;
+
     }
 }
