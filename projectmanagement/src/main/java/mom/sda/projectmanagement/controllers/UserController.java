@@ -1,7 +1,9 @@
 
 package mom.sda.projectmanagement.controllers;
+import mom.sda.projectmanagement.entities.UserEntity;
 import mom.sda.projectmanagement.repositories.UserRepository;
 import mom.sda.projectmanagement.services.UserService;
+
 import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,22 +39,22 @@ public class UserController {
     }
 
     // Get All Users
-    @RequestMapping(value = "/allUsers", method = RequestMethod.POST)
+    @RequestMapping(value = "/allUsers", method = RequestMethod.GET)
     public ModelAndView displayAllUser() {
         System.out.println("User Page Requested : All Users");
         ModelAndView mv = new ModelAndView();
 
         List userList = userService.getAllUsers();
         mv.addObject("userList", userList);
-        mv.setViewName("allUsers");
+        mv.setViewName("user");
         return mv;
     }
     // add user
     @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public ModelAndView displayNewUserForm() {
-        ModelAndView mv = new ModelAndView("addUser");
+        ModelAndView mv = new ModelAndView("add-user");
         mv.addObject("headerMessage", "Add User Details");
-        mv.addObject("user", new User());
+        mv.addObject("NewUser", new UserEntity());
         return mv;
     }
 
@@ -63,7 +65,7 @@ public class UserController {
         ModelAndView mv = new ModelAndView("/editUser");
         User user = userService.editUser();
         mv.addObject("headerMessage", "Edit User Details");
-        mv.addObject("user", user);
+        mv.addObject("user", UserEntity());
         return mv;
     }
 

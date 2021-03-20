@@ -9,14 +9,14 @@
     <title>WELCOME to our sistem management tool</title>
 </head>
 <body>
-<p  th:text="#{home.welcome)">WELCOME to our sistem management tool!</p>
+<p  WELCOME to our sistem management tool!</p>
 <p>Please see below all the users assigned for the projects</p>
 
-<li th:each="user:${user}">
-    <p th:text="${user.login}">
-    <p th:text="user:${password}">
-    <p th:text="user:${email}" >
-    <p th:text="user:${displayed_name}">
+<li th:each="user:${userList}">
+    <p th:text="'user': + ${user.login}">
+    <p th:text=" 'user': +${user.password}">
+    <p th:text=" 'user': +${user.email}" >
+    <p th:text=" 'user': +${displayed_name}">
 
 </li>
 
