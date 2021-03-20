@@ -40,4 +40,9 @@ public class ProjectService {
     }
 
 
+    public ProjectEntity getProject(int id) {
+        Optional<ProjectEntity> projectEntityOptional =  projectRepository.findById(id);
+        ProjectEntity projectEntity = projectEntityOptional.get();
+        return projectEntity;
+    }
 }

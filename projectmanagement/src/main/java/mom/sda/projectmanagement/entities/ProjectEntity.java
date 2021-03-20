@@ -5,9 +5,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "project")
 public class ProjectEntity {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private String description;
     private String administrator;
@@ -25,10 +25,12 @@ public class ProjectEntity {
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public String getDescription() {
+
         return description;
     }
 
