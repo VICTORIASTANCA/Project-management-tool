@@ -21,7 +21,6 @@ public class TaskNameEntity {
     private int storyPoints;
     @Enumerated(EnumType.STRING)
     private State progress;
-    private UserEntity assignedPerson;
 
     public enum State {
         TO_DO, ONGOING, BACKLOG, DONE, POSTPONED
@@ -99,11 +98,4 @@ public class TaskNameEntity {
         this.progress = progress;
     }
 
-    public UserEntity getAssignedPerson() {
-        return assignedPerson;
-    }
-
-    public void setAssignedPerson(UserEntity assignedPerson) {
-        this.assignedPerson = assignedPerson;
-    }
 }
