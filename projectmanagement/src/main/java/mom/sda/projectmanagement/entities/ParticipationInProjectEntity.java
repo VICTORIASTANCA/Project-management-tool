@@ -3,14 +3,11 @@ package mom.sda.projectmanagement.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="participation in the project")
+@Table(name="participation")
 
 public class ParticipationInProjectEntity {
-
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-
-
     private Integer id;
     private String project;
     private String user;

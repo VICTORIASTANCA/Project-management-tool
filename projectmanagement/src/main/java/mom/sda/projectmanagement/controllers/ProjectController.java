@@ -36,6 +36,6 @@ public class ProjectController {
         projectService.addProject(newProject);
         return "redirect:/getProject";
     }
-    
+
 
 }

@@ -7,10 +7,16 @@
 </head>
 <body>
 
-<p>These should be our tasks within this project</p>
+<a th:href="@{/add-task}"><button>Add Task</button></a>
+
+<p>These are the project tasks</p>
 
 <li th:each="task: ${tasks}">
+    <p th:text="${task.id}"/>
     <p th:text="${task.name}"/>
+    <p th:text="${task.description}"/>
+    <a th:href="@{/delete-task/{id}(id = ${task.id})}"><button>Delete</button></a>
+    <a th:href="@{/edit-task/{id}(id = ${task.id})}"><button>Edit</button></a>
 </li>
 
 </body>

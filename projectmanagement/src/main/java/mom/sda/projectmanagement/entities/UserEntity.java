@@ -19,6 +19,13 @@ public class UserEntity {
     @OneToMany(mappedBy = "user")
     private List<TaskNameEntity>tasks;
 
+    public UserEntity(List<TaskNameEntity> tasks) {
+        for (TaskNameEntity taskNameEntity : this.tasks = tasks) {
+
+        }
+
+    }
+
     public Integer getId() {
         return id;
     }
