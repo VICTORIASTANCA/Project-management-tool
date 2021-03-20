@@ -1,6 +1,7 @@
 package mom.sda.projectmanagement.entities;
 
 import org.apache.catalina.LifecycleState;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,7 +13,9 @@ public class SprintEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateFrom;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateTo;
     private Integer plannedStoryPoints;
 

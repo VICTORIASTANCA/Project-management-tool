@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html
         xmlns:th="http://www.thymeleaf.org"
-        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns="http://www.w3.org/1999/html"
+        lang="en">
 <head>
     <meta charset="UTF-8">
     <title>My sprint</title>
@@ -12,7 +13,10 @@
 <p>Here are my sprint</p>
 
 <li th:each="sprint: ${sprint}">
-    <p th:text="${sprint.name}"/>
+    <p th:text="'Id:' + ${sprint.id}"/>
+    <p th:text="'Data start:' + ${sprint.dateFrom}"/>
+    <p th:text="'Date end:' + ${sprint.dateTo}"/>
+    <p th:text="'Story points:' + ${sprint.plannedStoryPoints}"/>
 </li>
 
 </body>
