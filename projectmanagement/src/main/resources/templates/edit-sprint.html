@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit page</title>
+</head>
+<body>
+<p>Edit sprint</p>
+<form action="#" th:action="@{/sprint/edit}" th:object="${sprintToBeEdit}" method="post">
+    <table border="1">
+        <tr>
+            <td><label>Date from:</label></td>
+            <td><input type="date" th:field="*{dateFrom}" /></td>
+        </tr>
+        <tr>
+            <td><label>Date to:</label></td>
+            <td><input type="date" th:field="*{dateTo}" /></td>
+        </tr>
+        <tr>
+            <td><label>Planned Story Points:</label></td>
+            <td><input type="text" th:field="*{plannedStoryPoints}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Edit" /></td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+</html>

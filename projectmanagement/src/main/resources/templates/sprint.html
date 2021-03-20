@@ -9,6 +9,7 @@
     <title>My sprint</title>
 </head>
 <body>
+<a th:href="@{/add-sprint}"><button>Add sprint</button></a>
 
 <p>Here are my sprint</p>
 
@@ -17,6 +18,8 @@
     <p th:text="'Data start:' + ${sprint.dateFrom}"/>
     <p th:text="'Date end:' + ${sprint.dateTo}"/>
     <p th:text="'Story points:' + ${sprint.plannedStoryPoints}"/>
+    <a th:href="@{/edit-sprint/{id}(id = ${sprint.id})}"><button>Edit</button></a>
+    <a th:href="@{/delete-sprint/{id}(id = ${sprint.id})}"><button>Delete</button></a>
 </li>
 
 </body>

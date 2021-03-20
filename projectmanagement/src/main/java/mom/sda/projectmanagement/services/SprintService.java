@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SprintService {
@@ -33,5 +34,11 @@ public class SprintService {
 
     public void setSprintRepository(SprintRepository sprintRepository) {
         this.sprintRepository = sprintRepository;
+    }
+
+    public SprintEntity getSprint(int id) {
+        Optional<SprintEntity> sprintEntityOptional =  sprintRepository.findById(id);
+        SprintEntity sprintEntity = sprintEntityOptional.get();
+        return sprintEntity;
     }
 }
