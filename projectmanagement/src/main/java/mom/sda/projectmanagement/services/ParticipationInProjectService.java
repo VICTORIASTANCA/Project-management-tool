@@ -2,7 +2,6 @@ package mom.sda.projectmanagement.services;
 
 
 import mom.sda.projectmanagement.entities.ParticipationInProjectEntity;
-import mom.sda.projectmanagement.entities.ProjectEntity;
 import mom.sda.projectmanagement.repositories.ParticipationInProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

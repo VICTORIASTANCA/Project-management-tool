@@ -30,6 +30,7 @@ public class TaskNameEntity {
     @ManyToOne
     private UserEntity user;
 
+
     public UserEntity getUser() {
         return user;
     }
