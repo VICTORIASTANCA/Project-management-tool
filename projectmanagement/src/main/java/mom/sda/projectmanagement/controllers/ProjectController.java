@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.persistence.Access;
 import javax.persistence.ManyToOne;
 import javax.websocket.server.PathParam;
 import java.util.List;
@@ -22,24 +23,25 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    @ManyToOne
-    private UserEntity userEntity;
+    @Autowired
+    private UserService userService;
 
     public ProjectService getProjectService() {
         return projectService;
+    }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     public void setProjectService(ProjectService projectService) {
         this.projectService = projectService;
     }
 
-    public UserEntity getUserEntity() {
-        return userEntity;
-    }
-
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
-    }
 
     @GetMapping(path = "getProject")
     public String getProject(Model model) {
@@ -51,7 +53,7 @@ public class ProjectController {
     @GetMapping(path = "add-project")
     public String addProjectPage(Model model) {
         model.addAttribute("newProject", new ProjectEntity());
-        List<UserEntity> userEntities = userService.getAll();
+        List<UserEntity> userEntities = userService.getAllUsers();
         model.addAttribute("user", userEntities);
         return "add-project";
     }
@@ -66,7 +68,7 @@ public class ProjectController {
     public String editProject(Model model, @PathVariable("id") int id) {
         ProjectEntity projectEntity = projectService.getProject(id);
         model.addAttribute("projectToBeEdit", projectEntity);
-        List<UserEntity> userEntities = userService.getAll();
+        List<UserEntity> userEntities = userService.getAllUsers();
         model.addAttribute("user", userEntities);
         return "edit-project";
     }
