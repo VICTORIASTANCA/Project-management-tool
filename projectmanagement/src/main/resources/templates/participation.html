@@ -10,12 +10,11 @@
 <body>
 <a th:href="@{/add-particpation}"><button>Add participation in project</button></a>
 
-<p>Here are my projects</p>
+
 
 <li th:each="participation: ${participation}">
     <p th:text="'id:' + ${participation.id}"/>
-    <p th:text="'project:' + ${participation.project}"/>
-    <p th:text=" 'user:' + ${participation.user}"/>
+
 </li>
 
 <a th:href="@{/edit-participationInProject/{id}(id = ${participation.id})}"><button>Edit</button></a>
