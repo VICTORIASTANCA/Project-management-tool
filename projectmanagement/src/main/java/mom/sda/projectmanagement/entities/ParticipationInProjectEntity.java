@@ -7,16 +7,16 @@ import javax.persistence.*;
 
 public class ParticipationInProjectEntity {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String project;
     private String user;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -34,6 +34,8 @@ public class ParticipationInProjectEntity {
 
     public void setUser(String user) {
         this.user = user;
+
+
     }
 
     @Override
@@ -44,4 +46,10 @@ public class ParticipationInProjectEntity {
                 ", user='" + user + '\'' +
                 '}';
     }
+
 }
+
+
+
+
+

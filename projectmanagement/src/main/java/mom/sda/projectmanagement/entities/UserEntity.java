@@ -1,11 +1,13 @@
 package mom.sda.projectmanagement.entities;
 
+import org.springframework.scheduling.config.Task;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name="users")
-public class UserEntity {
+public class UserEntity<tasks> {
 
     @Id
     @GeneratedValue( strategy = GenerationType.AUTO)
@@ -17,6 +19,15 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "user")
     private List<TaskNameEntity> tasks;
+
+   public UserEntity (List<TaskNameEntity> tasks ) {
+       for (TaskNameEntity taskNameEntity : this.tasks = tasks) {
+        }
+    }
+
+    public UserEntity() {
+
+    }
 
     public Long getId() {
         return id;

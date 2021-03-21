@@ -23,8 +23,9 @@ public class UserController {
     }
 
     @GetMapping(path = "add-user")
-    public String addUserPagea(Model model) {
+    public String addUserPage(Model model) {
         model.addAttribute("newUser", new UserEntity());
+
         return "add-user";
     }
 
