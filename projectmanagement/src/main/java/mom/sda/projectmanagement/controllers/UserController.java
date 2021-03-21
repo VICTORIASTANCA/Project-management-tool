@@ -65,7 +65,7 @@ public class UserController {
         ModelAndView mv = new ModelAndView("/editUser");
         User user = userService.editUser();
         mv.addObject("headerMessage", "Edit User Details");
-        mv.addObject("user", UserEntity());
+        mv.addObject("user", new UserEntity());
         return mv;
     }
 

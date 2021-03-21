@@ -1,6 +1,7 @@
 package mom.sda.projectmanagement.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "project")
@@ -15,6 +16,9 @@ public class ProjectEntity {
     public Integer getId() {
         return id;
     }
+
+    @ManyToOne
+    private UserEntity user;
 
     public void setId(Integer id) {
         this.id = id;
