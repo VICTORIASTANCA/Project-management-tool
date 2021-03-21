@@ -19,7 +19,7 @@ public class UserController {
     public String getBooks(Model model) {
         List<UserEntity> userList = userService.getAllUsers();
         model.addAttribute("users", userList);
-        return "users";
+        return "user";
     }
 
     @GetMapping(path = "add-user")
