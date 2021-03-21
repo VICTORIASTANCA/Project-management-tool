@@ -30,17 +30,11 @@ public class TaskNameEntity {
     private UserEntity user;
 
 
-    public UserEntity getUser() {
-        return user;
-    }
+    public UserEntity getUser() { return user; }
 
-    public void setUser(UserEntity user) {
-        this.user = user;
-    }
+    public void setUser(UserEntity user) { this.user = user; }
 
-    public UserEntity userEntity() {
-        return user;
-    }
+    public UserEntity userEntity() { return user; }
 
     public Integer getId() {
         return id;
