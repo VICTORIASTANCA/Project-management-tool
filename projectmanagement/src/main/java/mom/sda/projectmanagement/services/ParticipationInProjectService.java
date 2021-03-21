@@ -13,26 +13,31 @@ public class ParticipationInProjectService {
     @Autowired
     private ParticipationInProjectRepository participationInProjectRepository;
 
-    public void addParticipationInProject(ParticipationInProjectEntity participationInProjectEntity){
-    participationInProjectRepository.save(participationInProjectEntity);
-}
-   public List<ParticipationInProjectEntity> getAllParticipationInProject(){
+    public void addParticipationInProject(ParticipationInProjectEntity participationInProjectEntity) {
+        participationInProjectRepository.save(participationInProjectEntity);
+    }
+
+    public List<ParticipationInProjectEntity> getAllParticipationInProject() {
         return participationInProjectRepository.findAll();
-   }
+    }
 
-   public void editParticipationInProject (ParticipationInProjectEntity editParticipationInProject){
+    public void editParticipationInProject(ParticipationInProjectEntity editParticipationInProject) {
         participationInProjectRepository.save(editParticipationInProject);
-   }
+    }
 
-   public void deleteParticipationInProject(Integer id){
-       participationInProjectRepository.deleteById(id);
-   }
+    public void deleteParticipationInProject(long id) {
+        participationInProjectRepository.deleteById(id);
+    }
 
-   public ParticipationInProjectRepository getParticipationInProjectRepository(){
+    public ParticipationInProjectRepository getParticipationInProjectRepository() {
         return participationInProjectRepository;
-   }
+    }
 
     public void setParticipationInProjectRepository(ParticipationInProjectRepository participationInProjectRepository) {
         this.participationInProjectRepository = participationInProjectRepository;
+    }
+
+    public ParticipationInProjectEntity getParticipationInProject(long id) {
+     return null;
     }
 }
