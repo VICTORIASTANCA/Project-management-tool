@@ -19,6 +19,16 @@ public class SprintEntity {
     private Date dateTo;
     private Integer plannedStoryPoints;
 
+    @OneToMany
+     public List<TaskNameEntity> taskNameEntities;
+
+    public List<TaskNameEntity> getTaskNameEntities() {
+        return taskNameEntities;
+    }
+
+    public void setTaskNameEntities(List<TaskNameEntity> taskNameEntities) {
+        this.taskNameEntities = taskNameEntities;
+    }
 
     public Date getDateFrom() {
 

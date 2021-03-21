@@ -11,14 +11,33 @@ public class ProjectEntity {
     private Integer id;
     private String name;
     private String description;
-    private String administrator;
+//    private String administrator;
 
     public Integer getId() {
         return id;
     }
 
+    @OneToMany
+    public List<SprintEntity> sprintEntities;
+
     @ManyToOne
-    private UserEntity user;
+    private UserEntity userEntity;
+
+    public List<SprintEntity> getSprintEntities() {
+        return sprintEntities;
+    }
+
+    public void setSprintEntities(List<SprintEntity> sprintEntities) {
+        this.sprintEntities = sprintEntities;
+    }
+
+    public UserEntity getUser() {
+        return userEntity;
+    }
+
+    public void setUser(UserEntity user) {
+        this.userEntity = user;
+    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -40,13 +59,5 @@ public class ProjectEntity {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getAdministrator() {
-        return administrator;
-    }
-
-    public void setAdministrator(String administrator) {
-        this.administrator = administrator;
     }
 }
