@@ -4,6 +4,7 @@ import mom.sda.projectmanagement.entities.TaskNameEntity;
 import mom.sda.projectmanagement.entities.UserEntity;
 import mom.sda.projectmanagement.services.TaskService;
 import mom.sda.projectmanagement.services.UserService;
+import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,26 @@ public class UserController {
 
     @Autowired
     private TaskService taskService;
+    private String login;
+
+
+    @GetMapping(path = "/login")
+    public String getLoginPage() {
+        return login;
+    }
+   @GetMapping(path = "/register")
+    public String getRegisterPage(Model model){
+        model.addAttribute("user", new UserEntity());
+        return"register";
+
+    }
+
+      @PostMapping(path="register/add")
+      public String register(@ModelAttribute UserEntity user){
+      userService.addCustomer(user);
+        return "redirect:/login";
+      }
+
 
     @GetMapping(path = "getUsers")
     public String getUsers(Model model) {

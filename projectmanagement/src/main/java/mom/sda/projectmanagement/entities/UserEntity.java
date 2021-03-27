@@ -17,6 +17,27 @@ public class UserEntity<tasks> {
     private String email;
     private String displayed_name;
 
+    private String username;
+    private String role;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+
+
     @OneToMany(mappedBy = "user")
     private List<TaskNameEntity> tasks;
 
