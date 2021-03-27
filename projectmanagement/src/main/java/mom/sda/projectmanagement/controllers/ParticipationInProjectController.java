@@ -1,7 +1,9 @@
 package mom.sda.projectmanagement.controllers;
 
 import mom.sda.projectmanagement.entities.ParticipationInProjectEntity;
+import mom.sda.projectmanagement.entities.UserEntity;
 import mom.sda.projectmanagement.services.ParticipationInProjectService;
+import mom.sda.projectmanagement.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +17,14 @@ import java.util.List;
 @Controller
 public class ParticipationInProjectController {
     // @PostMapping("/{projectId}/{userid}")
+
     @Autowired
     private ParticipationInProjectService participationInProjectService;
-    private Object newParticipationInProject;
+
+
+
+    @Autowired
+   private UserService userService;
 
 
     @GetMapping(path = "getParticipationInProject")
@@ -30,6 +37,8 @@ public class ParticipationInProjectController {
     @GetMapping(path = "add-participationInProject")
     public String AddParticipationInProjectPage(Model model) {
         model.addAttribute("newParticipationInProject", new ParticipationInProjectEntity());
+        List<UserEntity> userEntities = userService.getAllUsers();
+        model.addAttribute("user", userEntities);
         return "add-participationInProject";
     }
 
