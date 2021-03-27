@@ -6,34 +6,48 @@
     <title>List of users for all the projects in location</title>
 </head>
 <body>
-<p>WELCOME to our project management tool!</p>
-<p>ADD USER</p>
+
+<p>WELCOME to ORANGE project management tool!</p>
+
+<p>Mandatory informations for users to login: </p>
 
 
 <!--/*@thymesVar id="newUser" type=""*/-->
 <form action="#" th:action="@{/user/add}" th:object="${newUser}" method="post">
     <table border="3">
+        <div class="card" style="width: 18rem;">
+
+        </div>
         <tr>
+
             <td><label> login</label></td>
-
             <td><input type="text" th:field="*{login}"/></td>
-
+            </tr>
+        <tr>
             <td><label> email</label></td>
-
             <td><input type="text" th:field="*{email}"/></td>
+            </tr>
 
+        <tr>
             <td><label> displayed_name</label></td>
-
             <td><input type="text" th:field="*{displayed_name}"/></td>
         </tr>
+
         <tr>
             <td><label>password:</label></td>
-
             <td><input type="password" th:field="*{password}"/></td>
-
+        </tr>
             <td><input type="submit" value="Submit"/></td>
         </tr>
     </table>
+    <div class="card bg-dark text-white">
+        <img src="https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com//content/83/0c/333e756f4688a1431e30c7a86b9d/citrus-hero.jpg " class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Orange management tool</h5>
+
+        </div>
 </form>
+
+</div>
 </body>
 </html>
