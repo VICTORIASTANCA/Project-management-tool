@@ -1,6 +1,8 @@
 
 package mom.sda.projectmanagement.controllers;
+import mom.sda.projectmanagement.entities.TaskNameEntity;
 import mom.sda.projectmanagement.entities.UserEntity;
+import mom.sda.projectmanagement.services.TaskService;
 import mom.sda.projectmanagement.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,17 +17,21 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private TaskService taskService;
+
     @GetMapping(path = "getUsers")
-    public String getBooks(Model model) {
+    public String getUsers(Model model) {
         List<UserEntity> userList = userService.getAllUsers();
-        model.addAttribute("users", userList);
+        model.addAttribute("user", userList);
         return "user";
     }
 
     @GetMapping(path = "add-user")
     public String addUserPage(Model model) {
         model.addAttribute("newUser", new UserEntity());
-
+        List<TaskNameEntity> taskNameEntities = taskService.getAllTasks();
+        model.addAttribute("tasks", taskNameEntities);
         return "add-user";
     }
 
