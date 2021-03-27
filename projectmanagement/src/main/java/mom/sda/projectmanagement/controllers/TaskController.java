@@ -1,7 +1,9 @@
 package mom.sda.projectmanagement.controllers;
 
 import mom.sda.projectmanagement.entities.TaskNameEntity;
+import mom.sda.projectmanagement.entities.UserEntity;
 import mom.sda.projectmanagement.services.TaskService;
+import mom.sda.projectmanagement.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,9 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping("getTasks")
     public String getTasks(Model model) {
         List<TaskNameEntity> taskList = taskService.getAllTasks();
@@ -29,6 +34,8 @@ public class TaskController {
     @GetMapping("/add-task")
     public String addTaskPage(Model model) {
         model.addAttribute("newTask", new TaskNameEntity());
+        List<UserEntity> users = userService.getAllUsers();
+        model.addAttribute("users", users);
         return "add-task";
     }
 

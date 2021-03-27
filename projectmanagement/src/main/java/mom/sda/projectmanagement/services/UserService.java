@@ -19,6 +19,12 @@ import java.util.Optional;
 @Service
 
 public class UserService implements UserDetailsService {
+
+    public UserEntity getUserByUsername(String username){
+        Optional<UserEntity> userOptional = userRepository.findByUsername(username);
+        return userOptional.get();
+    }
+
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
      Optional<UserEntity>  userOptional= userRepository.findByUsername(s);
