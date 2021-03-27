@@ -27,7 +27,7 @@
 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bookstore</a>
+        <a class="navbar-brand" href="#">Orange tasks</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -85,7 +85,7 @@
             <p class="card-text" th:text="${task.weight}"/>
             <p class="card-text" th:text="${task.storyPoints}"/>
             <p class="card-text" th:text="${task.progress}"/>
-            <p class="card-text" th:text="${task.user}"/></p>
+            <p class="card-text" th:text="${task.user.displayed_name}"/></p>
             <a th:href="@{/delete-task/{id}(id = ${task.id})}" class="btn btn-danger">Delete</a>
             <a th:href="@{/edit-task/{id}(id = ${task.id})}" class="btn btn-primary">Edit</a>
         </div>
