@@ -58,7 +58,7 @@
             </div>
             <select id="inputGroupSelect2" class="custom-select" th:field="${newTask.user.id}">
                 <option selected th:value="null">Choose</option>
-                <option th:each="user : ${user}" th:value="${user.id}" th:text="${user.displayed_name}"></option>
+                <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.displayed_name}"></option>
             </select>
         </div>
     </table>
