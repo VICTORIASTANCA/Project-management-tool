@@ -45,7 +45,7 @@ public class ProjectController {
 
     @GetMapping(path = "getProject")
     public String getProject(Model model) {
-        List<ProjectEntity> projectList = projectService.gettAllProject();
+        List<ProjectEntity> projectList = projectService.getAllProject();
         model.addAttribute("project", projectList);
         return "project";
     }

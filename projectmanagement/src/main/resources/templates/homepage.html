@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card" style="width:300px; max-height: 500px;">
+        <img src="https://www.orangescrum.org/articles/wp-content/uploads/2020/01/Why-should-you-invest-in-an-Enterprise-Project-Management-Software.jpg">
+
+        <div class="card-body">
+            <a th:href="@{/getParticipationInProject}">
+                <button>ParticipationInProject</button>
+            </a>
+
+            <a th:href="@{/getProject}">
+                <button type="button" class="btn btn-success">Projects</button>
+            </a>
+
+            <a th:href="@{/getTasks}">
+                <button>Tasks</button>
+            </a>
+
+            <a th:href="@{/getSprint}">
+                <button>Sprint</button>
+            </a>
+            <a th:href="@{/getUsers}">
+                <button>Users</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

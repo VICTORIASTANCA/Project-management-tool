@@ -20,7 +20,7 @@ public class SprintEntity {
     private Integer plannedStoryPoints;
 
     @OneToMany
-     public List<TaskNameEntity> taskNameEntities;
+    public List<TaskNameEntity> taskNameEntities;
 
     public List<TaskNameEntity> getTaskNameEntities() {
         return taskNameEntities;

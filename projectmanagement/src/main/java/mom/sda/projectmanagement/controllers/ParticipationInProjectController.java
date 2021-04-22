@@ -49,7 +49,6 @@ public class ParticipationInProjectController {
     }
 
 
-
     @GetMapping(path = "edit-participationInProject/{id}")
     public String  editParticipationInProjectPage(Model model, @PathVariable("id") long id){
         ParticipationInProjectEntity participationInProjectEntity = participationInProjectService.getParticipationInProject(id);
