@@ -31,11 +31,11 @@ public class ProjectEntity {
         this.sprintEntities = sprintEntities;
     }
 
-    public UserEntity getUser() {
+    public UserEntity getUserEntity() {
         return userEntity;
     }
 
-    public void setUser(UserEntity user) {
+    public void setUserEntity(UserEntity user) {
         this.userEntity = user;
     }
 
