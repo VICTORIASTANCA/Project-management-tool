@@ -1,20 +1,12 @@
 package mom.sda.projectmanagement.controllers;
-
 import mom.sda.projectmanagement.entities.ProjectEntity;
 import mom.sda.projectmanagement.entities.UserEntity;
 import mom.sda.projectmanagement.services.ProjectService;
 import mom.sda.projectmanagement.services.UserService;
-import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.persistence.Access;
-import javax.persistence.ManyToOne;
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @Controller
