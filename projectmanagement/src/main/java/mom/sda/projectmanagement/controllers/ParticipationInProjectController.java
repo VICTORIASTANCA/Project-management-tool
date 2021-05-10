@@ -3,6 +3,7 @@ package mom.sda.projectmanagement.controllers;
 import mom.sda.projectmanagement.entities.ParticipationInProjectEntity;
 import mom.sda.projectmanagement.entities.UserEntity;
 import mom.sda.projectmanagement.services.ParticipationInProjectService;
+import mom.sda.projectmanagement.services.ProjectService;
 import mom.sda.projectmanagement.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,10 +22,11 @@ public class ParticipationInProjectController {
     @Autowired
     private ParticipationInProjectService participationInProjectService;
 
-
+    @Autowired
+    private ProjectService projectService;
 
     @Autowired
-   private UserService userService;
+    private UserService userService;
 
 
     @GetMapping(path = "getParticipationInProject")

@@ -7,10 +7,7 @@ import mom.sda.projectmanagement.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -62,6 +59,12 @@ public class TaskController {
     public String deleteTask(Model model, @PathVariable("id") Integer id) {
         taskService.deleteTask(id);
         return "redirect:/getTasks";
+    }
+
+    @RequestMapping(value = "tasks", method = RequestMethod.GET)
+    public String showTaskById(@RequestParam (value = "id", required = false) Integer id, Model model) {
+        model.addAttribute("search", taskService.showTaskById(id));
+        return "tasks";
     }
 
 }

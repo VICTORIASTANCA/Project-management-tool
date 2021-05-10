@@ -41,4 +41,9 @@ public class TaskService {
        TaskNameEntity taskNameEntity = taskNameEntityOptional.get();
         return taskNameEntity;
     }
+
+    public Object showTaskById(Integer id) {
+        return taskRepository.findById(id);
+    }
+
 }

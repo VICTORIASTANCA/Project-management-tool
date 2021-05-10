@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
@@ -9,27 +8,33 @@
 
 <div class="container">
 
-    <div class="card" style="width:300px; max-height: 500px;">
+    <div class="card" style="width:800px; max-height: 500px;">
         <img src="https://www.orangescrum.org/articles/wp-content/uploads/2020/01/Why-should-you-invest-in-an-Enterprise-Project-Management-Software.jpg">
+        <br>
 
         <div class="card-body">
             <a th:href="@{/getParticipationInProject}">
-                <button>ParticipationInProject</button>
+                <button type="button" class="btn btn-primary">ParticipationInProject</button>
             </a>
-
+            <br>
+            <br>
             <a th:href="@{/getProject}">
                 <button type="button" class="btn btn-success">Projects</button>
             </a>
-
+            <br>
+            <br>
             <a th:href="@{/getTasks}">
-                <button>Tasks</button>
+                <button type="button" class="btn btn-success">Tasks</button>
             </a>
-
+            <br>
+            <br>
             <a th:href="@{/getSprint}">
-                <button>Sprint</button>
+                <button type="button" class="btn btn-success">Sprints</button>
             </a>
+            <br>
+            <br>
             <a th:href="@{/getUsers}">
-                <button>Users</button>
+                <button type="button" class="btn btn-success">Users</button>
             </a>
         </div>
     </div>
